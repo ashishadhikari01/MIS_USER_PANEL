@@ -1,0 +1,181 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.all-events-extends{
+    display:none;
+}
+.show-extends-menu{
+   display: block;
+}
+
+/* actually starts here */
+
+#events-menu{
+ margin:50px auto;
+}
+.create-event{
+    /* display:inline-block; */
+    margin:auto;
+    width:90%;
+    /* border:2px solid red; */
+}
+.create-event-wrapper{
+    width:150px;
+    height:150px;
+    background-color: white;
+    border:2px solid rgb(71, 71, 71);
+    box-shadow: 0.5px 0.5px 15px 2px rgb(71, 71, 71);
+    border-radius:10px;
+}
+.create-event-icon{
+/* border:1px solid red; */
+display:flex;
+justify-content: center;
+align-items: center;
+height:100%;
+cursor:pointer;
+transition: transform 0.5s ease;
+}
+.create-event-icon:hover{
+    transform: scale(1.2);
+}
+.create-event-icon:active{
+    transform: scale(1.0);
+}
+.event-form{
+    margin:auto;
+    width:50%;
+    font-size:19px;
+    /* font-size:20px; */
+}
+.event-form-wrapper{
+border:2px solid rgb(255, 255, 255);
+border-radius: 7px;
+}
+.event-form-wrapper form{
+    margin:auto;
+    width:85%;
+    padding:7px;
+    /* border:2px solid red; */
+}
+.event-form-wrapper form div>input,textarea {
+    width:80%;
+    padding:3px;
+    border:none;
+    border-radius:5px;
+}
+.event-form-wrapper form div>input,textarea:focus{
+    outline: none;
+}
+.event-form-wrapper form div>button{
+    margin:auto;
+    width:80%;
+    padding:3px;
+    margin-top:7px;
+    cursor:pointer;
+    border-radius:5px;
+    border:1px solid black;
+    background-color: silver;
+    font-weight:500;
+}
+
+.event-form-wrapper form div>button:hover{
+    background-color: rgba(192, 192, 192, 0.486);   
+}
+.event-form-wrapper form div>button:active{
+    background-color:silver;
+}
+
+/* css for add event toogle here */
+.event-form{
+    display:none;
+}
+.show-event-form{
+    display: block;
+}
+
+/* css for 'created-event' */
+.created-event-bar{
+    margin-top:15px;
+    width:100%;
+    background-color: white;
+    height:70px;
+}
+.created-event-bar-wrapper{
+    /* padding-top:10px; */
+    display:flex;
+    align-items:center;
+    height:100%;
+    margin:auto;
+    width:90%;
+    /* border:1px solid red; */
+}
+.created-event{
+    font-size:20px;
+/* background-color: white; */
+/* width:1168.4px;
+height:389.46px; */
+}
+.created-event-wrapper{
+ display:flex;
+ margin:20px auto;
+ /* width:80%; */
+ width:1168.4px;
+ /* height:500px; */
+ /* padding:10px; */
+ border:3px solid rgb(255, 255, 255);
+ border-radius:5px;
+}
+.view-participants-btn{
+/* border:2px solid red; */
+margin:5px auto;
+width:70%;
+/* height:100%; */
+}
+.view-participants-btn button, #create-event-form-create{
+    padding:5px;
+    border:1px solid green;
+    background-color: rgba(0, 128, 0, 0.772);
+    cursor:pointer;
+    color:white;
+    border-radius: 4px;
+}
+.view-participants-btn button:active, #create-event-form-create:active{
+    background-color: rgb(0, 128, 0);
+    color:rgba(255, 255, 255, 0.891);
+}
+
+.created-event-wrapper div>img{
+cursor:pointer;
+transition: transform 0.5s ease;
+}
+.created-event-wrapper div>img:hover{
+    transform: scale(0.97);
+}
+.created-event-desc{
+margin:20px auto 10px auto;
+width:55%;
+/* overflow: hidden; */
+}
+.created-event-desc .description{
+/* border:2px solid red; */
+overflow:hidden;
+max-height:410px;
+text-overflow:"<a href='./overflow.html'>... read more</a>";
+}
+.separator{
+    /* width:100%;  */
+    margin:0 5px;
+    /* height:2px; */
+    border-left:3px solid blue;
+    background-color: blue;
+}
+
+.total-participants-details{
+    background-color: white;
+    padding:5px;
+}
+
+

@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.interested-events{
+    background-color: white;
+    height:70px;
+    margin-top:60px;
+}
+.interested-events-wrapper{
+    margin:auto;
+    width:90%;
+    padding-top:10px;
+}

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Panel</title>
+    <link rel="stylesheet" href="./usercss/common.css">
+    <link rel="stylesheet" href="./usercss/forallform.css">
+    <link rel="stylesheet" href="./usercss/overview.css">
+    <link rel="stylesheet" href="./usercss/status.css">
+    <link rel="stylesheet" href="./usercss/setting.css">
+    <link rel="stylesheet" href="./usercss/logout.css">
+    <link rel="stylesheet" href="./usercss/allevents.css">
+    <link rel="stylesheet" href="./usercss/interested-events.css">
+    <script src="./javascript/overview.js" defer></script>
+    <script src="./javascript/executiveform.js" defer></script>
+    <script src="./javascript/generalmemberform.js" defer></script>
+    <script src="./javascript/leadingmemberform.js" defer></script>
+    <script src="./javascript/allevents.js" defer></script>
+   <!-- <link  rel="stylesheet" href="./userdashboard.html" -->
+    <style>
+        /* CSS to hide the sections by default except the overview */
+        .content-section {
+            display: none;
+        }
+
+        #overview-menu {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-link');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Hide all sections
+                    document.querySelectorAll('.content-section').forEach(function(section) {
+                        section.style.display = 'none';
+                    });
+
+                    // Show the selected section
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul class="nav-container">
+            <li class="item1">Membership</br>Issue System</li>
+            <li class="item2"><img src="./images/icons8-user-default-64.png" alt="default-img" id="default-pic"></li>
+        </ul>
+    </nav>
+    <div class="main-container">
+        <div class="side-container">
+            <div class="sidecontainer-wrapper">
+                <div class="sidecontainer-items">
+                    <div class="sidecontainer-items-core" id="Overview">
+                        <a href="#overview-menu" class="nav-link" data-target="overview-menu">
+                            <span><img src="./images/house-solid (1).svg" alt="home-icon" width="30px" height="30px"></span>
+                            <span class="sidecontainer-item-button">Overview</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sidecontainer-items">
+                    <div class="sidecontainer-items-core" id="status">
+                        <a href="#status-menu" class="nav-link" data-target="status-menu">
+                            <span><img src="./images/7628371_about_information_info_help_icon.svg" alt="status-icon" width="30px" height="30px"></span>
+                            <span class="sidecontainer-item-button">Status</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="sidecontainer-items">
+                    <div class="sidecontainer-items-core" id="setting">
+                        <a href="#setting-menu" class="nav-link" data-target="setting-menu">
+                            <span><img src="./images/icons8-setting.svg" alt="setting-icon" width="30px" height="30px"></span>
+                            <span class="sidecontainer-item-button">Setting</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="sidecontainer-items">
+                    <div class="sidecontainer-items-core" id="events">
+                        <a href="#events-menu" class="nav-link" data-target="events-menu">
+                            <!-- <span><img src="./images/icons8-events-30.png" alt="events-icon" width="30px" height="30px"></span> -->
+                             <span><img src="./images/icons8-event-accepted-30.png"  width="30px" height="15px"  alt="event-accepted"/></span>
+                            <span class="sidecontainer-item-button">All Events</span>
+                        </a>
+                    </div>
+                </div>
+                 
+                <div class="all-events-extends">
+                 <div class="sidecontainer-items">
+                    <div class="sidecontainer-items-core" id="all-events-extend">
+                        <a href="#all-events-extends-menu" class="nav-link" data-target="all-events-extends-menu">
+                            <!-- <span><img src="./images/icons8-events-30.png" alt="events-icon" width="30px" height="30px"></span> -->
+                            
+                            <span class="sidecontainer-item-button">Interested</span>
+                        </a>
+                    </div>
+                </div>
+                </div>
+
+                <div class="sidecontainer-items">
+                    <div class="sidecontainer-items-core" id="logout"> 
+                        <a href="#logout-menu" class="nav-link" data-target="logout-menu">
+                            <span><img src="./images/1564506_close_exit_logout_power_icon.svg" alt="logout-icon" width="30px" height="30px"></span> 
+                            <span class="sidecontainer-item-button">Logout</span>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <!-- center container starts here -->
+        <div class="center-container">
+            <div id="overview-menu" class="content-section">
+                <div class="personal-info">
+                    <div class="personal-info-wrapper">
+                        <h1>Personal Information</h1>
+                        <button class="expand-btn"><img src="./images/icons8-chevron-24.png" alt="arrow-down-img"></button>
+                    </div>
+                </div>
+                <div class="expanded-container">
+    
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                            <div><h1>Name</h1></div>
+                            <div><h1 class="date-fetch">...</h1></div>
+                        </div>
+                    </div>
+        
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                            <div><h1>Status</h1></div>
+                            <div><h1 class="data-fetch">..</h1></div>
+                        </div>
+                    </div>
+        
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                            <div><h1>Email</h1></div>
+                            <div><h1 class="data-fetch">..</h1></div>
+                        </div>
+                    </div>
+        
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                            <div><h1>Date of birth</h1></div>
+                            <div><h1 class="data-fetch">...</h1></div>
+                        </div>
+                    </div>
+        
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                            <div><h1>Gender</h1></div>
+                            <div><h1 class="data-fetch">...</h1></div>
+                        </div>
+                    </div>
+        
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                          <div><h1>Phone</h1></div>
+                           <div><h1 class="data-fetch">...</h1></div>
+                        </div>
+                    </div>
+        
+                    <div class="expandedarea-items">
+                        <div class="expandedarea-items-item">
+                            <div><h1>Faculty</h1></div>
+                            <div><h1 class="data-fetch">....</h1></div>
+                        </div>
+                    </div>
+                </div>    
+                <div class="profile-picture">
+                    <div class="profile-picture-wrapper">
+                        <h1>Add Profile Picture</h1>
+                        <label for="input-file"><img src="./images/icons8-plus-50.png" alt="plus-img"></label>
+                        <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+                    </div>
+                </div>
+                <div class="register-as">
+                    <div class="register-as-wrapper">
+                        <h1>Register as</h1>
+                        <button class="registeras-expand-btn"><img src="./images/icons8-chevron-24.png" alt="arrow-down-img"></button>
+                    </div>
+                </div>
+                <div class="register-as-expand">
+                    <div class="register-as-items">
+                        <div class="register-as-item">
+                            <div class="register-as-item-upper">
+                                <div><img src="./images/annie-spratt-hCb3lIB8L8E-unsplas.jpg" width="100%" height="100%" alt="image-for-member"></div>
+                            </div>
+                            <div class="register-as-item-lower">
+                                <p>General Member</p>
+                                <div class="apply-btn" id="general-member-apply-btn"><button>Apply Now</button></div>
+                            </div>
+                        </div>
+                        <div class="register-as-item">
+                            <div class="register-as-item-upper">
+                                <div><img src="./images/headway-5QgIuuBxKwM-unsplash.jpg" width="100%" height="100%" alt="image-for-member"></div>
+                            </div>
+                            <div class="register-as-item-lower">
+                                <p>Leading Member</p>
+                                <div class="apply-btn" id="leading-member-apply-btn"><button>Apply Now</button></div>
+                            </div>
+                        </div>
+                        <div class="register-as-item">
+                            <div class="register-as-item-upper">
+                                <div><img src="./images/campaign-creators-gMsnXqILjp4-unsplash.jpg" width="100%" height="100%" alt="image-for-member"></div>
+                            </div>
+                            <div class="register-as-item-lower">
+                                <p>Executive</p>
+                                <div class="apply-btn" id="executive-apply-btn"><button>Apply Now</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-expand" id="form-expand">
+                    <div class="form-container1">
+                        <div class="form-container1-wrapper">
+                    <form id="myform1">
+                        <div class="element-child">
+                            <div><label><li>What skills do you have?</li></label></div>
+                            <div><input type="text" name="qns1-ans"></div>
+                            <p class="err-msg" id="qns1-err"></p>
+                        </div>
+                
+                        <div class="element-child">
+                            <div><label><li>Why do you want to be part of us?</li></label></div>
+                            <div><input type="text" name="qns2-ans"></div>
+                            <p class="err-msg" id="qns2-err"></p>
+                        </div>
+                
+                        <div class="element-child">
+                            <div><label><li>How would you contribute to our society if you get selected?</li></label></div>
+                            <div><input type="text" name="qns3-ans"></div>
+                            <p class="err-msg" id="qns3-err"></p>
+                        </div>
+                
+                        <div class="element-child">
+                            <div><label><li>Have you been part of any club/society yet?</li></label></div>
+                            <div><select name="qns4-ans" class="input-select">
+                                <option value="select">select</option>
+                                <option value="yes">yes</option>
+                                <option value="no">no</option>
+                            </select></div>
+                            <p class="err-msg" id="qns4-err"></p>
+                        </div>
+                
+                        <div class="element-child" id="qns5">
+                            <div><label><li>whats the club society you been part of?</li></label></div>
+                            <div><input type="text" name="qns5-ans"></div>
+                            <p class="err-msg" id="qns5-err"></p>
+                        </div>
+                 
+                        <div class="element-child" id="qns6">
+                            <div><label><li>How do you know about us?</li></label></div>
+                            <div><input type="text" name="qns6-ans"></div>
+                            <p class="err-msg" id="qns6-err"></p>
+                        </div>
+                 
+                        <div class="element-child"> 
+                            <div><label><li>What could be the one strongest reason we should select you?</li></label></div>
+                            <div><input type="text" name="qns7-ans"></div>
+                            <p class="err-msg" id="qns7-err"></p>
+                        </div>
+                        
+                        <div><p class="err-msg" id="overall-err"></p></div>
+                        
+                        <div class="element-child">
+                            <button type="submit" class="register-btn">Register</button>
+                        </div>
+                        <div class="element-child">
+                            <button class="gm-close-btn" type="submit">Close</button>
+                        </div>
+                        
+                        
+                        </form>
+                    </div>
+                    </div>
+                </div>
+        
+                <!-- form2 container for leading member starts form here -->
+                <div class="form-container2">
+                    <div class="form-container2-wrapper">
+                    <form id="myform2">
+                    <div class="element-child">
+                        <div><label><li>Have you previously served as General member?</li></label></div>
+                        <div><select name="le-qns1-ans" class="input-select">
+                        <option value="select">Select</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                        </select></div>
+                        <p class="err-msg" id="le-qns1-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child" id="le-qns2">
+                        <div><label><li>How many physical events did you participate?</li></label></div>
+                        <div><select name="le-qns2-ans" class="input-select">
+                            <option value="select">select</option>
+                            <option value="0">0</option>
+                            <option value="1>">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select></div>
+                        <p class="err-msg" id="le-qns2-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child" id="le-qns3">
+                        <div><label><li>Why do you think you are suitable for leading member?</li></label></div>
+                        <div><input type="text" name="le-qns3-ans"></div>
+                        <p class="err-msg" id="le-qns3-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child" id="le-qns4">
+                        <div><label><li>How do you know about us?</li></label></div>
+                        <div><input type="text" name="le-qns4-ans"></div>
+                        <p class="err-msg" id="le-qns4-err">*Required</p>
+                    </div>
+             
+                    <div class="element-child" id="le-qns5">
+                        <div><label><li>Why do you think you are suitable for leading member?</li></label></div>
+                        <div><input type="text" name="le-qns5-ans"></div>
+                        <p class="err-msg" id="le-qns5-err">*Required</p>
+                    </div>
+             
+                    <div class="element-child"> 
+                        <div><label><li>Why do you want to be part of us?</li></label></div>
+                        <div><input type="text" name="le-qns6-ans"></div>
+                        <p class="err-msg" id="le-qns6-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child"> 
+                        <div><label><li>what skills do you have?</li></label></div>
+                        <div><input type="text" name="le-qns7-ans"></div>
+                        <p class="err-msg" id="le-qns7-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child"> 
+                        <div><label><li>whats the one thing you have implemented participating any events?</li></label></div>
+                        <div><input type="text" name="le-qns8-ans"></div>
+                        <p class="err-msg" id="le-qns8-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child"> 
+                        <div><label><li>As a leader, how do you handle conflicts or disagreements within your team?</li></label></div>
+                        <div><input type="text" name="le-qns9-ans"></div>
+                        <p class="err-msg" id="le-qns9-err">*Required</p>
+                    </div>
+            
+                    <div class="element-child"> 
+                        <div><label><li>What could be the one strongest reason we should select you?</label></li></div>
+                        <div><input type="text" name="le-qns10-ans"></div>
+                        <p class="err-msg" id="le-qns10-err">*Required</p>
+                    </div>
+                    <div><p class="err-msg" id="le-overall-err"></p></div>
+            
+                    <div class="element-child">
+                    <button type="button" class="le-register-btn">Register</button>
+                    </div>
+                    <div class="element-chil">
+                        <button type="submit" class="le-close-btn">close</button>
+                    </div>
+                    
+                    
+                    </form>
+                </div>
+                </div>
+        
+        
+                <!-- form3 container for executive starts form here -->
+                <div class="form-container3">
+                    <div class="form-container3-wrapper">
+                    <form id="myform3">
+                  <div class="element-child">
+                 <div><label>which roles have you played as part of club?</label></div>
+                 <div class="checkbox">
+                    <div class="checkbox-wrapper">
+                    <label><input type="checkbox" name="exe-qns1[]" value="general-member">General Member</label>
+                    <label><input type="checkbox" name="exe-qns1[]" value="leading-member">Leading Member</label>
+                    <label><input type="checkbox" name="exe-qns1[]" value="volunteer">Volunteer</label>
+                    <label><input type="checkbox" name="exe-qns1[]" value="others">Others</label>
+                 </div>
+                 </div>
+                 <p class="err-msg" id="exe-qns1-err">*Required</p>
+                  </div>
+            
+                 <div class="element-child">
+                  <div><label>How would you describe the role of executive in four different words?</label></div>
+                  <div><input type="text" name="exe-qns2"></div>
+                 <p class="err-msg" id="exe-qns2-err">*Required</p>
+                  </div>
+            
+                  <div class="element-child">
+                  <div><label>What do you think the most interesting and boring things to do as Executive?</label></div>
+                  <div><input type="text" name="exe-qns3"></div>
+                  <p class="err-msg" id="exe-qns3-err">*Required</p>
+                  </div>
+            
+                  <div class="element-child">
+                 <div><label>On your previous tenure,what did you gave to society to make it more better?</label></div>
+                 <div><input type="text" name="exe-qns4"></div>
+                 <p class="err-msg" id="exe-qns4-err">*Required</p>
+                  </div>
+            
+                  <div class="element-child">
+                  <div><label>what will be the three new changes you will make as executive?</label></div>
+                 <div><input type="text" name="exe-qns5"></div>
+                 <p class="err-msg" id="exe-qns5-err">*Required</p>
+                  </div>
+            
+                   <div class="element-child">
+                 <div><label>Do you remember any events you actively participate?,whats your role? </label></div>
+                 <div><input type="text" name="exe-qns6"></div>
+                 <p class="err-msg" id="exe-qns6-err">*Required</p>
+                  </div>
+            
+                   <div class="element-child">
+                 <div><label>What are you focusing on apart from your syllabus?</label></div>
+                   <div><input type="text" name="exe-qns7"></div>
+                  <p class="err-msg" id="exe-qns7-err">*Required</p>
+                  </div>
+            
+                 <p class="err-msg" id="exe-overall-err"></p>
+                  <div>
+                 <button class="exe-register-btn" type="button">Register</button>
+                  </div>
+                  <div>
+                   <button class="exe-close-btn" type="submit">Close</button>
+                  </div>
+                  </form>
+                  </div>
+                  </div>
+            </div>
+
+            <!-- Status menu content starts here -->
+            <div id="status-menu" class="content-section">
+                <div class="outline">
+                    <h1 class="current-status">Your status:</h1>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Applicant Email</th>
+                                <th>Faculty</th>
+                                <th>Position</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>adhikaryashish005@gmail.com</td>
+                                <td>ICT</td>
+                                <td>General Member</td>
+                                <td>pending</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Status menu content ends here -->
+            
+            <!-- setting menu content starts here -->
+            <div class="setting-container content-section" id="setting-menu">
+               <div class="setting-contaier-wrapper">
+                <div class="edit-bar">
+                    <div class="edit-bar-wrapper">
+                    <div><img width="50" height="50" src="https://img.icons8.com/pastel-glyph/64/loop.png" alt="loop"/></div>
+                    <div><h3>Edit Details</h3></div>
+                    </div>
+                    </div>
+                 </div>
+
+               <div class="edit-form">
+                <form>
+                <div><h3>Name</h3></div>
+                <div><input type="text"></div>
+                <div><h3>Email</h3></div>
+                <div><input type="email"></div> 
+                <div><h3>Date Of Birth</h3></div>
+                <div><input type="date"></div> 
+                <div><h3>Gender</h3></div>
+                <div><input type="text"></div> 
+                <div><h3>Phone</h3></div>
+                <div><input type="phone"></div> 
+                <div><h3>Faculty</h3></div>
+                <div><input type="text"></div>
+                <button type="button" class="edit-update-btn">Update</button>
+              </form>
+               </div>
+               
+               <div class="account-delete">
+                <div class="danger-zone">
+                    <div class="danger-zone-wrapper">
+                <div><img width="50" height="50" src="https://img.icons8.com/ios/50/high-risk.png" alt="high-risk"/></div>
+                <div><h3>Danger Zone</h3></div>
+                </div>
+                </div>
+               </div>
+               
+               <div class="account-delete-container">
+                <form>
+                    <h5><span><h4>Note:</h4></span>Deleting your account is permanent. When you delete your account, you won't be able to retrieve the content or information you've shared on Membership Issue System.</h5>
+
+                    <div><h3>Email</h3></div>
+                    <div><input type="email" required></div>
+                    <div><h3>Password</h3></div>
+                    <div><input type="password" required></div>
+                    <div><button type="button" class="account-delete-btn">Delete</button> </div>
+                </form>
+               </div>
+              
+            </div>
+
+            <!-- events parts starts here -->
+            <div id="events-menu" class="content-section">
+                  <div class="created-event-bar">
+                    <div class="created-event-bar-wrapper">
+                     <div><h3>All Events</h3></div> 
+                    </div>
+                    </div>
+     
+                    <div class="created-event">
+                     <div class="created-event-wrapper">
+                     <div class="created-event-img">
+                     <div>
+                       <img src="./images/it-mela.jpg" width="389px" height="389px">
+                     </div>
+                     <div class="view-participants-btn">
+                       <button type="button" id="interest-btn">Interest</button>
+                       <!-- <button type="button" id="delete-event">Delete</button> -->
+                     </div>
+                     </div>
+                     <div class="separator"></div>
+                     <div class="created-event-desc">
+                       <div class="description">
+                       <h1>IT mela for tech enthusiast</h1>
+                       <h3>Location:Thapathali,campus</h3>
+                       <h3>Date: 20th Asar 2081</h3>
+                       <h3>Duration:10am-5pm</h3>
+                       <p>Details:Get ready for the grandest tech events ever to hit Nepal! First up, we're thrilled to announce the biggest IT Mela happening in Bagmati Province Kathmandu, organized by SMC ITclub. With the theme of 'Learn, Connect, and Entertain', this Ashar SMC IT club  initiative is set to bring together +2 student's, undergraduates students, tech enthusiasts & IT Professionals for an unforgettable experience. Stay tuned with Code for Change for all the latest updates.
+     
+                         Wondering what's next after +2 or Bachelor's? Feeling uncertain about your future? Don't worry! The IT Mela is here to help you. Come and join the biggest IT Mela happening in Ashar, where you could get guidance from professionals. Don't miss this opportunity, join us.
+                         
+                         Tech enthusiasts, mark your calendars and don't miss out on these incredible opportunities to learn, network, and be a part of something extraordinary. See you there!</p>
+                        </div>
+                     </div>
+
+                     </div>
+                    </div>
+            </div>
+
+             <!-- all-events extends starts form here -->
+            <div class="content-section" id="all-events-extends-menu">
+                <div class="interested-events">
+                    <div class="interested-events-wrapper">
+                        <h1>Interested Events</h1>
+                    </div>
+                </div>
+
+                <div class="interested-events-list">
+                    <!-- fetch heree -->
+                </div>
+            </div>
+            <!-- Logout parts start here -->
+            <div id="logout-menu" class="content-section logout-container">
+                <div><h1>Are you sure want to logout?</h1></div>
+                <div class="exit-btn-wrapper">
+                    <a href="./login.html"><button type="button" name="yes" class="exit-btn yes">Yes</button></a>
+                    <a href=""><button type="submit" name="no" class="exit-btn no">No</button></a>
+                </div>
+            </div>
+            <!-- Logout parts end here -->
+        </div>
+    </div>
+</body>
+</html>

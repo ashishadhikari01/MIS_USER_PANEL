@@ -1,0 +1,92 @@
+
+.form-container1, .form-container2, .form-container3{
+    display:flex;
+    justify-content: center; 
+    /* border:2px solid rgb(255, 0, 0);   */
+     padding:10px;
+    font-size:23px;
+    font-family:cursive;
+}
+
+
+.form-container1 .form-container1-wrapper, .form-container2 .form-container2-wrapper, .form-container3 .form-container3-wrapper{
+    border:2px solid rgb(255, 255, 255);
+    border-radius:5px;
+    padding:10px;
+    width:50%;
+    margin:auto;
+}
+.form-container1-wrapper form , .form-container2-wrapper form, .form-container3-wrapper form{
+ /* border:1px solid yellow; */
+ margin:20px;
+ margin:auto;
+ width:80%; 
+ display: flex;
+ justify-content:center;
+ flex-direction: column;
+}
+
+.element-child input,.input-select, .register-btn, .le-register-btn, .exe-register-btn,.exe-close-btn, .le-close-btn, .gm-close-btn{
+    border:2px solid silver;
+    border-radius: 3px;
+    width:90%;
+    height:30px;
+    margin:5px auto 10px auto;
+    font-size:18px;
+    font-family:cursive;
+}
+
+.register-btn, .le-register-btn, .exe-register-btn, .exe-close-btn,.le-close-btn,.gm-close-btn{
+    background-color:green;
+    color:white;
+    border:1px solid white;
+    cursor:pointer;
+    height:35px;
+    border-radius:5px;
+}
+.register-btn:hover, .le-register-btn:hover, .exe-register-btn:hover, .exe-close-btn:hover,.gm-close-btn:hover{
+    background-color:rgba(0, 128, 0, 0.697);
+    color:white;
+    border:1px solid rgba(255, 255, 255, 0.697);
+    border-radius:7px;
+}
+.err-msg{
+    margin:3px;
+    color:red;
+    font-size:16px;
+}
+#le-overall-err{
+    display:flex;
+    justify-content: center;
+    color:green;
+}
+
+/* css mainly for form3:executive form */
+/* .checkbox{
+    border:1px solid red;
+} */
+.checkbox .checkbox-wrapper{
+    display:flex;
+    border:2px solid silver;
+    border-radius: 3px;
+    width:90%;
+    /* height:30px; */
+    /* margin:5px auto 10px auto; */
+    /* border:1px solid green; */
+}
+.checkbox-wrapper label{
+    /* border:2px solid black; */
+    display: flex;
+    width:130px;
+}
+#exe-overall-err{
+    color:green;
+    display:flex;
+    justify-content: center;
+}
+#overall-err{
+    display:flex;
+    justify-content: center;
+}
+
+

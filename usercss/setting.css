@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+.setting-container{
+    margin:40px 0;
+    /* color:white; */
+    font-size:25px;
+}
+.edit-bar{
+    /* background-color:rgb(42, 146, 220); */
+    background-color: white;
+    color:black;
+    width:100%;
+    padding:2px;
+    /* height:70px; */
+}
+.edit-bar-wrapper{
+    display:flex;
+    /* justify-content: space-between; */
+    width:90%;
+    margin:20px auto 0 auto;
+}
+.edit-bar-wrapper h3{
+    margin-left:10px;
+    margin-top:5px;
+}
+.edit-form{
+    width:100%;
+    /* background-color: red; */
+}
+.edit-form form{
+    /* background-color: rgb(45, 45, 45); */
+    margin:15px auto 15px auto;
+    width:80%;
+    border:3px solid rgb(232, 225, 225);
+    border-radius:10px;
+    padding:7px;
+}
+.edit-form form div h3,input,button{
+    /* margin:auto; */
+    width:100%;
+}
+.edit-form form div h3, .account-delete-container form h3{
+   /* background-color:rgba(119, 136, 153, 0.396); */
+   padding:3px;
+}
+.edit-form form div input, .account-delete-container form div input{
+ border:none;
+ padding:3px;
+}
+.edit-form form div input:focus, .account-delete-container form div input:focus{
+    outline:none;
+    border-radius:7px;
+}
+.edit-update-btn{
+    cursor:pointer;
+    height:30px;
+    background-color:rgb(102, 178, 250);
+    border:1px solid rgb(102, 178, 250);
+}
+.edit-update-btn:hover{
+    background-color:rgba(102, 178, 250, 0.781);
+    border-radius:5px;
+}
+.edit-update-btn:active{
+    background-color:rgb(102, 178, 250);
+}
+
+/* css for delete account starts from here */
+.danger-zone{
+    margin-top:30px;
+    background-color: white;
+}
+.danger-zone-wrapper{
+    display:flex;
+    margin:auto;
+    width:90%;
+    padding:10px;
+}
+.danger-zone-wrapper h3{
+    margin:5px 0 0 10px;
+}
+.account-delete-container{
+    width:100%;
+    margin-top:30px;
+}
+.account-delete-container form{
+    margin:auto;
+    width:80%;
+    border:3px solid rgb(232, 225, 225);
+    border-radius:10px;
+    padding:7px;
+}
+/* .account-delete-container form div input{
+    /* color:red; 
+} */
+.account-delete-btn{
+    background-color: red;
+    border:none;
+    height:30px;
+    cursor:pointer;
+    color:white;
+}
+.account-delete-btn:hover{
+    border-radius:7px;
+    background-color: rgba(255, 0, 0, 0.648);
+}
+.account-delete-btn:active{
+    background-color: red;   
+}
+
+
